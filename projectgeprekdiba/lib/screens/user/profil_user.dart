@@ -33,7 +33,7 @@ class ProfilUserPage extends StatefulWidget {
 class _ProfilUserPageState extends State<ProfilUserPage> {
   // Data user (dapat diubah saat pengeditan)
   String _userName = 'User Name';
-  String _userEmail = 'user@contoh.com';
+  String _userEmail = 'User Email';
   final String _userProfileImage = 'assets/wiwin.jpg';
 
   // Controller untuk mengedit nama dan email
@@ -151,7 +151,7 @@ class _ProfilUserPageState extends State<ProfilUserPage> {
                             ),
                             TextField(
                               controller: _emailController,
-                              decoration: InputDecoration(labelText: 'Email'),
+                              decoration: InputDecoration(labelText: ''),
                             ),
                           ],
                         ),

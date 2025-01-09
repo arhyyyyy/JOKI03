@@ -14,11 +14,13 @@ class RegisterUserScreen extends StatefulWidget {
 
 class _RegisterUserScreenState extends State<RegisterUserScreen> {
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   String? _profileImage;
 
   Future<void> _registerUser() async {
     final String name = _nameController.text.trim();
+    final String email = _emailController.text.trim();
     final String password = _passwordController.text.trim();
 
     if (name.isEmpty || password.isEmpty) {
@@ -33,6 +35,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
 
     final Map<String, dynamic> userData = {
       'name': name,
+      'email': email,
       'password': password,
       'profileImage': _profileImage ?? '',
     };
@@ -108,6 +111,19 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
               controller: _nameController,
               decoration: InputDecoration(
                 labelText: "Nama",
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFFF8348)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: myCustomColor),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+              TextField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                labelText: "Email",
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFFFF8348)),
                 ),
